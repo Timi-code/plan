@@ -1,23 +1,6 @@
 <div class="card">
-  <!-- 计划列表 -->
-  <p class="list" *ngIf="plans.length === 0">1. 先赚它一个亿</p>
-  <p *ngFor="let item of plans;let index = index" class="list" (click)="edit(item, index)">{{index + 1}}. {{item}}</p>
-
-  <!-- 第二步 设置背景图-->
-  <div class="upload" *ngIf="step === 2">
-    <p class="tips">上传一张背景图片</p>
-    <p class="tips">点击上传</p>
-    <input type="file" (change)="upload($event)">
-  </div>
-
-  <!-- 输入框 -->
-  <div class="handle" [ngClass]="{unfold: hideAddBtn}" *ngIf="step === 1">
-    <input type="text" placeholder="Enter plan" maxlength="10" [(ngModel)]="value" (keyup.enter)="enter()"
-      (blur)="inputBlur()" />
-    <button *ngIf="hideAddBtn" @clockwiseTrigger (click)="submit()">YES</button>
-    <button *ngIf="!hideAddBtn" @anticlockwiseTrigger (click)="add()">NEW</button>
-  </div>
-
-  <!-- 截图 -->
-  <img [src]="canvasImg" class="image" *ngIf="canvasImg">
+    <h2 class="title">2020 年度计划</h2>
+    <!-- 计划列表 -->
+    <p class="list" *ngIf="plans.length === 0">1. 先赚它一个亿</p>
+    <p *ngFor="let item of plans;let index = index" class="list" (click)="edit(item, index)">{{index + 1}}. {{item}}</p>
 </div>

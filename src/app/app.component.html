@@ -1,8 +1,31 @@
 <div class="main">
-  <div class="blur"></div>
-  <app-card #card [complete]="complete" [step]="step"></app-card>
-  <div class="tool-bar">
-    <button class="btn" *ngIf="step === 1 || step === 2" (click)="next()">NEXT</button>
-    <button class="btn" *ngIf="step === 3" @show (click)="card.toImage()">SHARE YOUR PLAN</button>
-  </div>
+    <div class="blur"></div>
+    <div class="content">
+        <app-card [bgImg]="bgImg" [plans]="plans" @show *ngIf="step === 1"></app-card>
+
+        <!-- 第二步 设置背景图-->
+        <app-upload [plans]="plans" [bgImg]="bgImg" (handleBgImg)="handleBgImg($event)" @show *ngIf="step === 2">
+        </app-upload>
+
+        <!-- 第三步 设置字体颜色 -->
+        <app-font-color [plans]="plans" @show *ngIf="step === 3"></app-font-color>
+
+        <!-- 截图 -->
+        <img [src]="canvasImg" class="image" *ngIf="canvasImg">
+    </div>
+
+    <!-- 工具栏 -->
+    <div class="tool-bar">
+
+        <!-- 输入框 -->
+        <div class="handle" *ngIf="step === 1">
+            <input type="text" placeholder="Enter plan" maxlength="10" [(ngModel)]="value" (keyup.enter)="enter()" />
+            <button (click)="enter()">确定</button>
+        </div>
+
+        <button class="btn" *ngIf="step !== 1 && step !== 4" (click)="back()">上一步</button>
+        <button class="btn" *ngIf="step !== 3 && step !== 4" (click)="next()">下一步</button>
+        <button class="btn" *ngIf="step === 3" (click)="complete()">完 成</button>
+        <span class="tips" *ngIf="step === 4" @show>长按图片保存</span>
+    </div>
 </div>

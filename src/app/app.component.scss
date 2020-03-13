@@ -18,20 +18,69 @@
   }
 }
 
-app-card,
-app-upload {
+.content {
+  position: relative;
   width: 320px;
   height: 520px;
-  background-color: gray;
+
+  app-card,
+  app-upload,
+  app-font-color {
+    position: absolute;
+    width: 320px;
+    height: 520px;
+    background-color: gray;
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .tool-bar {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
   margin-top: 40px;
   z-index: 1;
-  .btn {
-    width: 180px;
-    height: 56px;
+
+  .handle {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
     border-radius: 28px;
+    width: 200px;
+    height: 40px;
+    transition: all 0.7s ease-in-out;
+    input {
+      position: absolute;
+      left: 28px;
+      width: calc(100% - 84px);
+      height: 40px;
+      outline: 0;
+      border: none;
+      background-color: transparent;
+      font-size: 20px;
+    }
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+    }
+  }
+
+  .btn {
+    width: 80px;
+    border-radius: 20px;
+  }
+  .tips {
+    color: #fff;
+    font-size: 16px;
   }
 }
 

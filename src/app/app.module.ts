@@ -5,11 +5,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
+import { UploadComponent } from './upload/upload.component';
+import { FontColorComponent } from './font-color/font-color.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    UploadComponent,
+    FontColorComponent
   ],
   imports: [
     BrowserModule,

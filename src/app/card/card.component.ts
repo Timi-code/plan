@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Renderer2, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer2 } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import html2canvas from 'html2canvas';
 
@@ -23,60 +23,25 @@ import html2canvas from 'html2canvas';
 })
 export class CardComponent implements OnInit {
 
-  hideHandle: boolean = false;
-  hideAddBtn: boolean = false;
   value: string = '';
-  plans: string[] = [];
   canvasImg: string;
-  bgImg: string;
+  @Input() bgImg: string;
 
-  @Input() complete: boolean;
-  @Input() step: number;
+  @Input() plans: string[];
 
   constructor(
     private el: ElementRef,
     private render: Renderer2
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if (this.bgImg) {
+      this.render.setStyle(this.el.nativeElement.querySelector('.card'), 'background-image', `url(${this.bgImg})`);
+    }
+  }
 
   edit(plan: string, index: number): void {
     console.log(plan, index);
-  }
-
-  add(): void {
-    this.hideAddBtn = true;
-  }
-
-  submit(): void {
-    this.hideAddBtn = false;
-    setTimeout(() => {
-      this.value = ''
-    }, 1000);
-  }
-
-  enter(): void {
-    this.plans.push(this.value);
-    this.value = '';
-  }
-
-  inputBlur(): void {
-    this.hideAddBtn = false;
-    setTimeout(() => {
-      this.value = ''
-    }, 1000);
-  }
-
-  // 自定义背景图
-  upload($event: Event): void {
-    const target = $event.target as HTMLInputElement;
-    const file = target.files[0];
-    const reader = new FileReader();
-    reader.onload = (event: Event) => {
-      const fileReader = event.target as FileReader;
-      this.render.setStyle(this.el.nativeElement.querySelector('.card'), 'background-image', `url(${fileReader.result})`);
-    }
-    reader.readAsDataURL(file);
   }
 
   // 截图生成图片
