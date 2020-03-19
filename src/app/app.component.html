@@ -8,10 +8,13 @@
         </app-upload>
 
         <!-- 第三步 设置字体颜色 -->
-        <app-font-color [plans]="plans" @show *ngIf="step === 3"></app-font-color>
-
+        <app-font-color [plans]="plans" [bgImg]="bgImg" [colorSelector]="colorSelector" @capture *ngIf="step === 3"></app-font-color>
+        
         <!-- 截图 -->
         <img [src]="canvasImg" class="image" *ngIf="canvasImg">
+
+        <!-- QR -->
+        <img src="../assets/qr.png" alt="qr" class="qr" *ngIf="qr">
     </div>
 
     <!-- 工具栏 -->
@@ -25,7 +28,7 @@
 
         <button class="btn" *ngIf="step !== 1 && step !== 4" (click)="back()">上一步</button>
         <button class="btn" *ngIf="step !== 3 && step !== 4" (click)="next()">下一步</button>
-        <button class="btn" *ngIf="step === 3" (click)="complete()">完 成</button>
+        <button class="btn" *ngIf="step === 3" (click)="complete()">生成海报</button>
         <span class="tips" *ngIf="step === 4" @show>长按图片保存</span>
     </div>
 </div>

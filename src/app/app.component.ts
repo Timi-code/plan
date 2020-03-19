@@ -14,7 +14,17 @@ import html2canvas from 'html2canvas';
       ]),
       transition(':leave', [
         style({ transform: 'scale(1)' }),
-        animate('0.8s cubic-bezier(.26, .51, .22, 1)', style({ transform: 'translateY(-700px) scale(0.7)' }))
+        animate('0.8s cubic-bezier(.26, .51, .22, 1)', style({ transform: 'translateX(-700px) scale(0.7)' }))
+      ])
+    ]),
+    trigger('capture', [
+      transition(':enter', [
+        style({ transform: 'translateY(600px) scale(0.7)' }),
+        animate('0.8s cubic-bezier(.26, .51, .22, 1)', style({ transform: 'translateY(0) scale(1)' }))
+      ]),
+      transition(':leave', [
+        style({ transform: 'scale(1)' }),
+        animate('0.8s cubic-bezier(.26, .51, .22, 1)', style({ transform: 'translateY(-800px)' }))
       ])
     ])
   ]
@@ -24,6 +34,8 @@ export class AppComponent {
   step: number = 1;
   value: string;
   bgImg: string;
+  qr = false;
+  colorSelector = true;
   canvasImg: string;
 
   enter(): void {
@@ -51,9 +63,13 @@ export class AppComponent {
   }
 
   complete(): void {
-    html2canvas(document.querySelector('.font-color')).then(canvas => {
-      this.canvasImg = canvas.toDataURL("image/png");
-      this.step = 4;
+    this.qr = true;
+    this.colorSelector = false;
+    setTimeout(() => {
+      html2canvas(document.querySelector('.font-color')).then(canvas => {
+        this.canvasImg = canvas.toDataURL("image/png");
+        this.step = 4;
+      })
     })
   }
 

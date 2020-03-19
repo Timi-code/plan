@@ -1,5 +1,7 @@
 <div class="font-color">
     <h2 class="title">2020 年度计划</h2>
     <!-- 计划列表 -->
-    <p *ngFor="let item of plans;let index = index" class="list">{{index + 1}}. {{item}}</p>
+    <p *ngFor="let item of plans;let index = index" class="list" [ngStyle]="{color: color}">{{index + 1}}. {{item}}</p>
+
+    <input type="color" [(ngModel)]="color" (input)="colorChange($event)" *ngIf="colorSelector" class="color-selector">
 </div>

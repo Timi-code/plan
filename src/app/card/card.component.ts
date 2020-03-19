@@ -25,6 +25,8 @@ export class CardComponent implements OnInit {
 
   value: string = '';
   canvasImg: string;
+  editing = false;
+  editIndex = 0;
   @Input() bgImg: string;
 
   @Input() plans: string[];
@@ -41,7 +43,14 @@ export class CardComponent implements OnInit {
   }
 
   edit(plan: string, index: number): void {
-    console.log(plan, index);
+    this.value = plan;
+    this.editIndex = index;
+    this.editing = true;
+  }
+
+  submit(): void {
+    this.plans[this.editIndex] = this.value
+    this.editing = false
   }
 
   // 截图生成图片
