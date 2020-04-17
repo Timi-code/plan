@@ -1,0 +1,38 @@
+:host {
+    display: block;
+    box-sizing: border-box;
+    padding: 0 20px 40px;
+}
+
+.content {
+    .recommend {
+        text-align: center;
+        span {
+            margin-right: 10px;
+        }
+        .black {
+            color: black;
+        }
+        .white {
+            color: white;
+        }
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+        .yellow {
+            color: yellow;
+        }
+    }
+
+    mat-list-item {
+        text-align: center;
+    }
+
+    mat-slider {
+        width: 300px;
+        margin-left: 4px;
+    }
+}

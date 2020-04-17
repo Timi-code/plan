@@ -1,0 +1,38 @@
+:host {
+    display: block;
+    box-sizing: border-box;
+    padding: 0 20px 40px;
+}
+
+.content {
+    .bg-list {
+        display: grid;
+        // grid-template-columns: 33.3% 33.3% 33.3%;
+        grid-template-columns: 25% 25% 25% 25%;
+        // grid-template-rows: 100px 100px 100px;
+
+        .bg {
+            width: 60px;
+            height: 80px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 10px;
+            &:nth-child(1) {
+                background-image: url('../../assets/bg1.jpg');
+            }
+            &:nth-child(2) {
+                background-image: url('../../assets/bg2.jpg');
+            }
+            &:nth-child(3) {
+                background-image: url('../../assets/bg3.jpg');
+            }
+            &:nth-child(4) {
+                background-image: url('../../assets/bg4.jpg');
+            }
+            &:nth-child(5) {
+                background-image: url('../../assets/bg5.jpg');
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<p class="bar-title">字体颜色</p>
+<div class="content">
+    <div class="recommend">
+        <span class="black" (click)="setColor(0, 0, 0)">白</span>
+        <span class="white" (click)="setColor(255, 255, 255)">红</span>
+        <span class="red" (click)="setColor(255, 0, 0)">蓝</span>
+        <span class="blue" (click)="setColor(0, 0, 255)">黄</span>
+        <span class="yellow" (click)="setColor(255, 255, 0)">黑</span>
+    </div>
+    <mat-list role="list">
+        <mat-list-item role="listitem">
+            R <mat-slider thumbLabel [min]="1" [max]="255" [(ngModel)]="r" (change)="sliderChange()"></mat-slider>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            G <mat-slider thumbLabel [min]="1" [max]="255" [(ngModel)]="g" (change)="sliderChange()"></mat-slider>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            B <mat-slider thumbLabel [min]="1" [max]="255" [(ngModel)]="b" (change)="sliderChange()"></mat-slider>
+        </mat-list-item>
+    </mat-list>
+</div>

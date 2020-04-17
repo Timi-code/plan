@@ -1,24 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import { UploadComponent } from './upload/upload.component';
-import { FontColorComponent } from './font-color/font-color.component';
+import { WellcomeComponent } from './wellcome/wellcome.component';
+import { MaterialModule } from './material-module/material-module.module';
+import { BackgroundBarComponent } from './background-bar/background-bar.component';
+import { FontColorBarComponent } from './font-color-bar/font-color-bar.component';
+import { PlanListComponent } from './plan-list/plan-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
-    UploadComponent,
-    FontColorComponent
+    WellcomeComponent,
+    BackgroundBarComponent,
+    FontColorBarComponent,
+    PlanListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HammerModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
