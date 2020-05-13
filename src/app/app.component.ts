@@ -39,14 +39,13 @@ import { BackgroundBarComponent } from './background-bar/background-bar.componen
       ])
     ]),
     trigger('planScale', [
-      state('zoom', style({ 'margin-top': '0', width: '100%' })),
-      state('scale', style({ 'margin-top': '60px', width: '300px' })),
+      state('zoom', style({ 'margin-top': '0', 'margin-left': '0', width: '100%' })),
+      state('scale', style({ 'margin-top': '60px', 'margin-left': 'calc(calc(100% - 300px) / 2)', width: '300px' })),
       transition('* => zoom', [
-        // style({ transform: 'translate(-50%, -50%) scale(1)' }),
-        animate('0.5s', style({ width: '100%', 'margin-top': '0' }))
+        animate('0.5s', style({ width: '100%', 'margin-left': '0', 'margin-top': '0' }))
       ]),
       transition('zoom => scale', [
-        animate('0.3s', style({ 'margin-top': '60px', width: '300px' }))
+        animate('0.3s', style({ 'margin-top': '60px', 'margin-left': 'calc(calc(100% - 300px) / 2)', width: '300px' }))
       ])
     ]),
     trigger('show', [
