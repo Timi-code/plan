@@ -1,0 +1,23 @@
+.plan-form-field {
+  // background-color: #fff;
+  color: #fff;
+}
+.plan-input {
+  caret-color: #fff;
+}
+::ng-deep .mat-form-field {
+  .mat-form-field-label {
+    color: #fff;
+  }
+  .mat-form-field-ripple {
+    background-color: #fff;
+  }
+  &.mat-focused {
+    .mat-form-field-label {
+      color: #fff;
+    }
+    .mat-form-field-ripple {
+      background-color: #fff;
+    }
+  }
+}

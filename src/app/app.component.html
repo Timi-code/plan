@@ -6,6 +6,8 @@
 
     <div class="mask" [hidden]="bgbarSlide !== 'slideOut' && colorSlide !== 'slideOut'" (click)="hideBar()"></div>
 
+    <app-input></app-input>
+
     <app-background-bar [@slide]="bgbarSlide" (click)="showBgBar()"></app-background-bar>
     
     <app-font-color-bar [@colorSlide]="colorSlide" (click)="showColorBar()"></app-font-color-bar>

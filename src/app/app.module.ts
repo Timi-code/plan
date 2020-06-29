@@ -9,6 +9,7 @@ import { MaterialModule } from './material-module/material-module.module';
 import { BackgroundBarComponent } from './background-bar/background-bar.component';
 import { FontColorBarComponent } from './font-color-bar/font-color-bar.component';
 import { PlanListComponent } from './plan-list/plan-list.component';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PlanListComponent } from './plan-list/plan-list.component';
     WellcomeComponent,
     BackgroundBarComponent,
     FontColorBarComponent,
-    PlanListComponent
+    PlanListComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
