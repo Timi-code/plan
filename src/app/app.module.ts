@@ -1,4 +1,4 @@
-import { BrowserModule, HammerModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +24,6 @@ import { InputComponent } from './input/input.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    HammerModule,
     MaterialModule
   ],
   providers: [],
